@@ -1,44 +1,47 @@
 package com.example.moviesappmvp.response;
 
 import com.example.moviesappmvp.model.MovieModel;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class MoviesResponse {
-    /**
-     * page : 1
-     * total_results : 10000
-     * total_pages : 500
-     * results : [{"popularity":1924.26,"vote_count":111,"video":false,"poster_path":"/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg","id":724989,"adult":false,"backdrop_path":"/86L8wqGMDbwURPni2t7FQ0nDjsH.jpg","original_language":"en","original_title":"Hard Kill","genre_ids":[28,53],"title":"Hard Kill","vote_average":4.9,"overview":"The work of billionaire tech CEO Donovan Chalmers is so valuable that he hires mercenaries to protect it, and a terrorist group kidnaps his daughter just to get it.","release_date":"2020-10-23"},{"popularity":2300.002,"vote_count":62,"video":false,"poster_path":"/h8Rb9gBr48ODIwYUttZNYeMWeUU.jpg","id":635302,"adult":false,"backdrop_path":"/xoqr4dMbRJnzuhsWDF3XNHQwJ9x.jpg","original_language":"ja","original_title":"劇場版「鬼滅の刃」無限列車編","genre_ids":[16,28,36,12,14,18],"title":"Demon Slayer: Kimetsu no Yaiba - The Movie: Mugen Train","vote_average":6.4,"overview":"Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!","release_date":"2020-10-16"},{"popularity":2007.928,"vote_count":590,"video":false,"poster_path":"/betExZlgK0l7CZ9CsCBVcwO1OjL.jpg","id":531219,"adult":false,"backdrop_path":"/8rIoyM6zYXJNjzGseT3MRusMPWl.jpg","original_language":"en","original_title":"Roald Dahl's The Witches","genre_ids":[14,10751,12,35,27],"title":"Roald Dahl's The Witches","vote_average":7.1,"overview":"In late 1967, a young orphaned boy goes to live with his loving grandma in the rural Alabama town of Demopolis. As the boy and his grandmother encounter some deceptively glamorous but thoroughly diabolical witches, she wisely whisks him away to a seaside resort. Regrettably, they arrive at precisely the same time that the world's Grand High Witch has gathered.","release_date":"2020-10-26"},{"popularity":1492.236,"vote_count":288,"video":false,"poster_path":"/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg","id":528085,"adult":false,"backdrop_path":"/5UkzNSOK561c2QRy2Zr4AkADzLT.jpg","original_language":"en","original_title":"2067","genre_ids":[878,53,18],"title":"2067","vote_average":4.9,"overview":"A lowly utility worker is called to the future by a mysterious radio signal, he must leave his dying wife to embark on a journey that will force him to face his deepest fears in an attempt to change the fabric of reality and save humankind from its greatest environmental crisis yet.","release_date":"2020-10-01"},{"popularity":1202.013,"vote_count":123,"video":false,"poster_path":"/zfdhsR3Y3xw42OHrMpi0oBw0Uk8.jpg","id":741074,"adult":false,"backdrop_path":"/DA7gzvlBoxMNL0XmGgTZOyv67P.jpg","original_language":"en","original_title":"Once Upon a Snowman","genre_ids":[16,10751,35,14],"title":"Once Upon a Snowman","vote_average":7.3,"overview":"The previously untold origins of Olaf, the innocent and insightful, summer-loving snowman are revealed as we follow Olaf\u2019s first steps as he comes to life and searches for his identity in the snowy mountains outside Arendelle.","release_date":"2020-10-23"},{"popularity":1004.386,"vote_count":152,"video":false,"poster_path":"/elZ6JCzSEvFOq4gNjNeZsnRFsvj.jpg","id":741067,"adult":false,"backdrop_path":"/aO5ILS7qnqtFIprbJ40zla0jhpu.jpg","original_language":"en","original_title":"Welcome to Sudden Death","genre_ids":[28,53,12,18],"title":"Welcome to Sudden Death","vote_average":6.3,"overview":"Jesse Freeman is a former special forces officer and explosives expert now working a regular job as a security guard in a state-of-the-art basketball arena. Trouble erupts when a tech-savvy cadre of terrorists kidnap the team's owner and Jesse's daughter during opening night. Facing a ticking clock and impossible odds, it's up to Jesse to not only save them but also a full house of fans in this highly charged action thriller.","release_date":"2020-09-29"},{"popularity":928.622,"vote_count":341,"video":false,"poster_path":"/lQfdytwN7eh0tXWjIiMceFdBBvD.jpg","id":560050,"adult":false,"backdrop_path":"/htBUhLSS7FfHtydgYxUWjL3J1Q1.jpg","original_language":"en","original_title":"Over the Moon","genre_ids":[16,12,10751,14],"title":"Over the Moon","vote_average":7.7,"overview":"A girl builds a rocket to travel to the moon in hopes of meeting the legendary Moon Goddess.","release_date":"2020-10-16"},{"popularity":1114.882,"vote_count":1046,"video":false,"poster_path":"/jlJ8nDhMhCYJuzOw3f52CP1W8MW.jpg","id":400160,"adult":false,"backdrop_path":"/wu1uilmhM4TdluKi2ytfz8gidHf.jpg","original_language":"en","original_title":"The SpongeBob Movie: Sponge on the Run","genre_ids":[14,16,12,35,10751],"title":"The SpongeBob Movie: Sponge on the Run","vote_average":8.3,"overview":"When his best friend Gary is suddenly snatched away, SpongeBob takes Patrick on a madcap mission far beyond Bikini Bottom to save their pink-shelled pal.","release_date":"2020-08-14"},{"popularity":898.868,"vote_count":2501,"video":false,"poster_path":"/riYInlsq2kf1AWoGm80JQW5dLKp.jpg","id":497582,"adult":false,"backdrop_path":"/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg","original_language":"en","original_title":"Enola Holmes","genre_ids":[80,18,9648],"title":"Enola Holmes","vote_average":7.5,"overview":"While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.","release_date":"2020-09-23"},{"popularity":806.945,"vote_count":789,"video":false,"poster_path":"/6agKYU5IQFpuDyUYPu39w7UCRrJ.jpg","id":740985,"adult":false,"backdrop_path":"/hbrXbVoE0NuA1ORoSGGYNASagrl.jpg","original_language":"en","original_title":"Borat Subsequent Moviefilm","genre_ids":[35],"title":"Borat Subsequent Moviefilm","vote_average":6.7,"overview":"14 years after making a film about his journey across the USA, Borat risks life and limb when he returns to the United States with his young daughter, and reveals more about the culture, the COVID-19 pandemic, and the political elections.","release_date":"2020-10-23"},{"popularity":800.753,"vote_count":732,"video":false,"poster_path":"/sy6DvAu72kjoseZEjocnm2ZZ09i.jpg","id":581392,"adult":false,"backdrop_path":"/2nFzxaAK7JIsk6l7qZ8rFBsa3yW.jpg","original_language":"ko","original_title":"반도","genre_ids":[28,27,53],"title":"Peninsula","vote_average":7,"overview":"A soldier and his team battle hordes of post-apocalyptic zombies in the wastelands of the Korean Peninsula.","release_date":"2020-07-15"},{"popularity":752.021,"vote_count":2807,"video":false,"poster_path":"/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg","id":337401,"adult":false,"backdrop_path":"/zzWGRw277MNoCs3zhyG3YmYQsXv.jpg","original_language":"en","original_title":"Mulan","genre_ids":[28,12,18,14],"title":"Mulan","vote_average":7.2,"overview":"When the Emperor of China issues a decree that one man per family must serve in the Imperial Chinese Army to defend the country from Huns, Hua Mulan, the eldest daughter of an honored warrior, steps in to take the place of her ailing father. She is spirited, determined and quick on her feet. Disguised as a man by the name of Hua Jun, she is tested every step of the way and must harness her innermost strength and embrace her true potential.","release_date":"2020-09-04"},{"popularity":745.191,"vote_count":175,"video":false,"poster_path":"/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg","id":694919,"adult":false,"backdrop_path":"/pq0JSpwyT2URytdFG0euztQPAyR.jpg","original_language":"en","original_title":"Money Plane","genre_ids":[28],"title":"Money Plane","vote_average":5.9,"overview":"A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.","release_date":"2020-09-29"},{"popularity":671.917,"vote_count":594,"video":false,"poster_path":"/qzA87Wf4jo1h8JMk9GilyIYvwsA.jpg","id":539885,"adult":false,"backdrop_path":"/54yOImQgj8i85u9hxxnaIQBRUuo.jpg","original_language":"en","original_title":"Ava","genre_ids":[28,80,18,53],"title":"Ava","vote_average":5.7,"overview":"A black ops assassin is forced to fight for her own survival after a job goes dangerously wrong.","release_date":"2020-07-02"},{"popularity":647.055,"vote_count":484,"video":false,"poster_path":"/kPzcvxBwt7kEISB9O4jJEuBn72t.jpg","id":677638,"adult":false,"backdrop_path":"/pO1SnM5a1fEsYrFaVZW78Wb0zRJ.jpg","original_language":"en","original_title":"We Bare Bears: The Movie","genre_ids":[10751,16,12,35],"title":"We Bare Bears: The Movie","vote_average":7.7,"overview":"When Grizz, Panda, and Ice Bear's love of food trucks and viral videos get out of hand, the brothers are chased away from their home and embark on a trip to Canada, where they can live in peace.","release_date":"2020-06-30"},{"popularity":593.004,"vote_count":98,"video":false,"poster_path":"/xqbQtMffXwa3oprse4jiHBMBvdW.jpg","id":601844,"adult":false,"backdrop_path":"/qTrpw2ZUvN7ywUu1kieEsvNDrgQ.jpg","original_language":"en","original_title":"Becky","genre_ids":[53,28,27],"title":"Becky","vote_average":6.2,"overview":"A teenager's weekend at a lake house with her father takes a turn for the worse when a group of convicts wreaks havoc on their lives.","release_date":"2020-07-23"},{"popularity":499.939,"vote_count":98,"video":false,"poster_path":"/bkld8Me0WiLWipLORRNfF1yIPHu.jpg","id":624963,"adult":false,"backdrop_path":"/ezLKohe4HKsHQbwQwhv0ARo83NC.jpg","original_language":"en","original_title":"A Babysitter's Guide to Monster Hunting","genre_ids":[12,35,14,10751],"title":"A Babysitter's Guide to Monster Hunting","vote_average":6.2,"overview":"Recruited by a secret society of babysitters, a high schooler battles the Boogeyman and his monsters when they nab the boy she's watching on Halloween.","release_date":"2020-10-14"},{"popularity":532.808,"vote_count":344,"video":false,"poster_path":"/uOw5JD8IlD546feZ6oxbIjvN66P.jpg","id":718444,"adult":false,"backdrop_path":"/x4UkhIQuHIJyeeOTdcbZ3t3gBSa.jpg","original_language":"en","original_title":"Rogue","genre_ids":[28,12,18,53],"title":"Rogue","vote_average":5.8,"overview":"Battle-hardened O\u2019Hara leads a lively mercenary team of soldiers on a daring mission: rescue hostages from their captors in remote Africa. But as the mission goes awry and the team is stranded, O\u2019Hara\u2019s squad must face a bloody, brutal encounter with a gang of rebels.","release_date":"2020-08-20"},{"popularity":522.62,"vote_count":24,"video":false,"poster_path":"/z0r3YjyJSLqf6Hz0rbBAnEhNXQ7.jpg","id":697064,"adult":false,"backdrop_path":"/7WKIOXJa2JjHygE8Yta3uaCv6GC.jpg","original_language":"en","original_title":"Beckman","genre_ids":[28],"title":"Beckman","vote_average":5.7,"overview":"A contract killer, becomes the reverend of a LA church, until a cult leader and his minions kidnap his daughter. Blinded by vengeance, he cuts a bloody path across the city. The only thing that can stop him is his newfound faith.","release_date":"2020-09-10"},{"popularity":365.786,"vote_count":34,"video":false,"poster_path":"/oAuBztpKuTIHb8nLl6miXIy0Sj9.jpg","id":499338,"adult":false,"backdrop_path":"/AuZgtWv4ZRhqD8u9JJMxTQbhz9q.jpg","original_language":"en","original_title":"I Believe","genre_ids":[10751],"title":"I Believe","vote_average":6.4,"overview":"A 9 year old boy experiences God's power in a supernatural way.","release_date":"2017-11-07"}]
-     */
+    @SerializedName("page")
+    @Expose
+    private Integer page;
+    @SerializedName("total_results")
+    @Expose
+    private Integer totalResults;
+    @SerializedName("total_pages")
+    @Expose
+    private Integer totalPages;
+    @SerializedName("results")
+    @Expose
+    private List<MovieModel> results = null;
 
-    private int page;
-    private int total_results;
-    private int total_pages;
-    private List<MovieModel> results;
-
-    public int getPage() {
+    public Integer getPage() {
         return page;
     }
 
-    public void setPage(int page) {
+    public void setPage(Integer page) {
         this.page = page;
     }
 
-    public int getTotal_results() {
-        return total_results;
+    public Integer getTotalResults() {
+        return totalResults;
     }
 
-    public void setTotal_results(int total_results) {
-        this.total_results = total_results;
+    public void setTotalResults(Integer totalResults) {
+        this.totalResults = totalResults;
     }
 
-    public int getTotal_pages() {
-        return total_pages;
+    public Integer getTotalPages() {
+        return totalPages;
     }
 
-    public void setTotal_pages(int total_pages) {
-        this.total_pages = total_pages;
+    public void setTotalPages(Integer totalPages) {
+        this.totalPages = totalPages;
     }
 
     public List<MovieModel> getResults() {
@@ -49,3 +52,4 @@ public class MoviesResponse {
         this.results = results;
     }
 }
+

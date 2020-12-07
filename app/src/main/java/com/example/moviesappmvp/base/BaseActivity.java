@@ -1,11 +1,16 @@
 package com.example.moviesappmvp.base;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
 public abstract class BaseActivity <P extends BasePresenter,V extends ViewBinding> extends AppCompatActivity {
+    public static final String STORE_FILE_NAME = "Movies_ID";
+    protected SharedPreferences sharedPreferences;
+    protected SharedPreferences.Editor prefsEditor;
     protected P presenter;
     protected V viewBinding;
     protected abstract V setViewBinding();
@@ -18,6 +23,8 @@ public abstract class BaseActivity <P extends BasePresenter,V extends ViewBindin
         viewBinding=setViewBinding();
         setContentView(viewBinding.getRoot());
         presenter=setPresenter();
+        sharedPreferences = getSharedPreferences(STORE_FILE_NAME, Context.MODE_PRIVATE);
+        prefsEditor = sharedPreferences.edit();
         onPostCreated();
     }
 

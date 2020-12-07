@@ -10,17 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".ui.detailactivity.DetailActivity"
-            android:parentActivityName=".ui.mainactivity.MoviesActivity" />
-        <activity android:name=".ui.mainactivity.MoviesActivity" android:launchMode="singleTop">
+        <activity android:name=".ui.splashscreen.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.detailactivity.DetailActivity"
+            android:parentActivityName=".ui.mainactivity.MoviesActivity" />
+        <activity
+            android:name=".ui.mainactivity.MoviesActivity"
+            android:launchMode="singleTop">
+
+        </activity>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 

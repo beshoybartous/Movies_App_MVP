@@ -16,8 +16,8 @@
         android:label="fragment_top_rated_movies"
         tools:layout="@layout/fragment_top_rated_movies" />
     <fragment
-        android:id="@+id/home_fragment"
-        android:name="com.example.moviesappmvp.ui.homefragment.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/favourite_movies_fragment"
+        android:name="com.example.moviesappmvp.ui.favouritefragment.FavouriteMoviesFragment"
+        android:label="favourite_movies_fragment"
+        tools:layout="@layout/fragment_favourite_movies"/>
 </navigation>

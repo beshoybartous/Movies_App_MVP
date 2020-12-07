@@ -1,114 +1,159 @@
 package com.example.moviesappmvp.model;
 
+import com.example.moviesappmvp.database.MoviesEntity;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class MovieModel implements Serializable {
-    /**
-     * popularity : 1924.26
-     * vote_count : 111
-     * video : false
-     * poster_path : /ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg
-     * id : 724989
-     * adult : false
-     * backdrop_path : /86L8wqGMDbwURPni2t7FQ0nDjsH.jpg
-     * original_language : en
-     * original_title : Hard Kill
-     * genre_ids : [28,53]
-     * title : Hard Kill
-     * vote_average : 4.9
-     * overview : The work of billionaire tech CEO Donovan Chalmers is so valuable that he hires mercenaries to protect it, and a terrorist group kidnaps his daughter just to get it.
-     * release_date : 2020-10-23
-     */
-
-    private double popularity;
-    private int vote_count;
-    private boolean video;
-    private String poster_path;
-    private int id;
-    private boolean adult;
-    private String backdrop_path;
-    private String original_language;
-    private String original_title;
+    @SerializedName("popularity")
+    @Expose
+    private Double popularity;
+    @SerializedName("vote_count")
+    @Expose
+    private Integer voteCount;
+    @SerializedName("video")
+    @Expose
+    private Boolean video;
+    @SerializedName("poster_path")
+    @Expose
+    private String posterPath;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("adult")
+    @Expose
+    private Boolean adult;
+    @SerializedName("backdrop_path")
+    @Expose
+    private String backdropPath;
+    @SerializedName("original_language")
+    @Expose
+    private String originalLanguage;
+    @SerializedName("original_title")
+    @Expose
+    private String originalTitle;
+    @SerializedName("genre_ids")
+    @Expose
+    private List<Integer> genreIds = null;
+    @SerializedName("title")
+    @Expose
     private String title;
-    private double vote_average;
+    @SerializedName("vote_average")
+    @Expose
+    private double voteAverage;
+    @SerializedName("overview")
+    @Expose
     private String overview;
-    private String release_date;
-    private List<Integer> genre_ids;
+    @SerializedName("release_date")
+    @Expose
+    private String releaseDate;
 
-    public double getPopularity() {
+    public MoviesEntity toEntity(){
+        return new MoviesEntity(id,
+                posterPath,
+                title,
+                overview,
+                releaseDate,
+                voteAverage);
+    }
+
+
+
+    public MovieModel() {
+    }
+
+    public MovieModel(String posterPath, Integer id, String title, double voteAverage, String overview, String releaseDate) {
+        this.posterPath = posterPath;
+        this.id = id;
+        this.title = title;
+        this.voteAverage = voteAverage;
+        this.overview = overview;
+        this.releaseDate = releaseDate;
+    }
+
+    public Double getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(double popularity) {
+    public void setPopularity(Double popularity) {
         this.popularity = popularity;
     }
 
-    public int getVote_count() {
-        return vote_count;
+    public Integer getVoteCount() {
+        return voteCount;
     }
 
-    public void setVote_count(int vote_count) {
-        this.vote_count = vote_count;
+    public void setVoteCount(Integer voteCount) {
+        this.voteCount = voteCount;
     }
 
-    public boolean isVideo() {
+    public Boolean getVideo() {
         return video;
     }
 
-    public void setVideo(boolean video) {
+    public void setVideo(Boolean video) {
         this.video = video;
     }
 
-    public String getPoster_path() {
-        if(poster_path!=null)
-            return "http://image.tmdb.org/t/p/w500"+poster_path;
+    public String getPosterPath() {
+        if(posterPath!=null)
+            return "http://image.tmdb.org/t/p/w500"+posterPath;
         else
-            return poster_path;
+            return posterPath;    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public boolean isAdult() {
+    public Boolean getAdult() {
         return adult;
     }
 
-    public void setAdult(boolean adult) {
+    public void setAdult(Boolean adult) {
         this.adult = adult;
     }
 
-    public String getBackdrop_path() {
-        return "http://image.tmdb.org/t/p/w500"+backdrop_path;
+    public String getBackdropPath() {
+        return "http://image.tmdb.org/t/p/w500"+backdropPath;
     }
 
-    public void setBackdrop_path(String backdrop_path) {
-        this.backdrop_path = backdrop_path;
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
     }
 
-    public String getOriginal_language() {
-        return original_language;
+    public String getOriginalLanguage() {
+        return originalLanguage;
     }
 
-    public void setOriginal_language(String original_language) {
-        this.original_language = original_language;
+    public void setOriginalLanguage(String originalLanguage) {
+        this.originalLanguage = originalLanguage;
     }
 
-    public String getOriginal_title() {
-        return original_title;
+    public String getOriginalTitle() {
+        return originalTitle;
     }
 
-    public void setOriginal_title(String original_title) {
-        this.original_title = original_title;
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
+    }
+
+    public List<Integer> getGenreIds() {
+        return genreIds;
+    }
+
+    public void setGenreIds(List<Integer> genreIds) {
+        this.genreIds = genreIds;
     }
 
     public String getTitle() {
@@ -119,12 +164,12 @@ public class MovieModel implements Serializable {
         this.title = title;
     }
 
-    public double getVote_average() {
-        return vote_average;
+    public double getVoteAverage() {
+        return voteAverage;
     }
 
-    public void setVote_average(double vote_average) {
-        this.vote_average = vote_average;
+    public void setVoteAverage(double voteAverage) {
+        this.voteAverage = voteAverage;
     }
 
     public String getOverview() {
@@ -135,19 +180,11 @@ public class MovieModel implements Serializable {
         this.overview = overview;
     }
 
-    public String getRelease_date() {
-        return release_date;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
-    }
-
-    public List<Integer> getGenre_ids() {
-        return genre_ids;
-    }
-
-    public void setGenre_ids(List<Integer> genre_ids) {
-        this.genre_ids = genre_ids;
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
